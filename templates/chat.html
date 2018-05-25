@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+</head>
+<body>
+    <h1>Welcome to the hot chat app, {{username}}</h1>
+    
+    <form action="/{{username}}/new" method="POST">
+        <input type="text" name="message"/ placeholder='Enter a hot message'>
+        <input type="submit" value="send"/>
+    </form>
+    
+    {% for m in messages %}
+      <p><strong>{{m.sender}}</strong>: {{ m.body }}</p>
+    {% endfor %}  
+    
+    <script>
+        setTimeout(function(){
+            location.reload();
+        },5000);
+    </script>
+    
+</body>
+</html>
