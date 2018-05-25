@@ -7,7 +7,8 @@
     <title>Chat</title>
 </head>
 <body>
-    <h1>Welcome to the hot chat app, {{username}}</h1>
+    <h1>Chat App</h1>
+    <p>Welcome, {{username}}</p>
     
     <form action="/{{username}}/new" method="POST">
         <input type="text" name="message"/ placeholder='Enter a message'>
@@ -18,11 +19,6 @@
       <p><strong>{{m.sender}}</strong>: {{ m.body }}</p>
     {% endfor %}  
     
-    <script>
-        setTimeout(function(){
-            location.reload();
-        },5000);
-    </script>
     
 </body>
 </html>
